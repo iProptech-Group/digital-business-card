@@ -1,5 +1,5 @@
 {
-  "name": "property-station-web",
+  "name": "digital-business-card",
   "scripts": {
     "dev": "webpack && nuxt",
     "build": "nuxt build",

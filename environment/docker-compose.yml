@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: ./workspace
+    container_name: web-node
+    working_dir: /digital-business-card/web
+    ports:
+    - 3000:3000

@@ -9,6 +9,6 @@ RUN apk update && apk upgrade
 RUN apk add git
 
 # copy the app, note .dockerignore
-COPY ./frontend /iproperty/frontend
+COPY ./web /digital-business-card/web
 RUN npm install
 RUN npm run build

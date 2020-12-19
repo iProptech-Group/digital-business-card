@@ -1,10 +1,19 @@
 version: '3'
 
 services:
-  node:
+  workspace:
     build:
       context: ./workspace
     container_name: web-node
     working_dir: /digital-business-card/web
+#    volumes:
+#    - ../web:/digital-business-card/web
     ports:
     - 3000:3000
+
+#  nginx:
+#    build:
+#      context: ./nginx
+#    container_name: web-nginx-adonis
+#    ports:
+#    - 8080:80

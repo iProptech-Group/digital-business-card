@@ -1,6 +1,9 @@
 # Dockerfile
 FROM node:11.13.0-alpine
-# update and install dependency
+
+# create destination directory
 RUN mkdir -p /digital-business-card/web
-RUN apk update && apk upgrade
-RUN apk add git
+
+# update and install dependency
+RUN apk update && apk upgrade \
+    apk add git

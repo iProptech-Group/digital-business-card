@@ -1,3 +1,6 @@
 FROM nginx:1.19.6-alpine
 
-COPY config/nginx.conf /etc/nginx/nginx.conf
+RUN adduser -u 1000 -D -S -G www-data www-data \
+    && chown -R www-data:www-data /var/log/nginx
+
+COPY ./config/. /etc/nginx/

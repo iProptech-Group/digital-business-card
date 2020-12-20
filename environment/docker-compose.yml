@@ -1,10 +1,25 @@
 version: '3'
 
 services:
-  node:
+  workspace:
+    image: web-node:latest
     build:
       context: ./workspace
     container_name: web-node
     working_dir: /digital-business-card/web
+    volumes:
+    - ../web:/digital-business-card/web
+    command: npm run dev
+    tty: true
+
+  nginx:
+    image: web-nginx-adonis:latest
+    build:
+      context: ./nginx
+    container_name: web-nginx-adonis
+    working_dir: /digital-business-card/web
+    depends_on:
+      - workspace
     ports:
-    - 3000:3000
+    - 80:80
+    - 443:443

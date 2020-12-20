@@ -5,10 +5,5 @@ FROM node:11.13.0-alpine
 RUN mkdir -p /digital-business-card/web
 
 # update and install dependency
-RUN apk update && apk upgrade
-RUN apk add git
-
-# copy the app, note .dockerignore
-COPY ../../web/. /digital-business-card/web
-RUN npm install
-RUN npm run build
+RUN apk update && apk upgrade \
+    apk add git

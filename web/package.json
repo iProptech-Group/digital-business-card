@@ -8,7 +8,8 @@
   "main": "server.js",
   "scripts": {
     "serve:dev": "npm run dev",
-    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "dev": "webpack --watch --config ./config/webpack.js nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "build-css": "webpack --watch --config ./config/webpack.js",
     "build": "node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js",
     "precommit": "npm run lint",
@@ -25,12 +26,13 @@
     "@adonisjs/lucid": "^4.0.22",
     "@adonisjs/session": "^1.0.19",
     "@adonisjs/shield": "^1.0.4",
+    "bulma": "^0.9.1",
     "cross-env": "^3.1.4",
     "nuxt": "latest",
     "standard": "^8.6.0",
-    "youch": "^2.0.4",
     "webpack": "^4.44.2",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "^4.2.0",
+    "youch": "^2.0.4"
   },
   "standard": {
     "global": [
@@ -43,12 +45,16 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "css-loader": "^5.0.1",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^2.3.1",
     "nodemon": "^1.11.0",
-    "standard": "^8.6.0"
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "standard": "^8.6.0",
+    "style-loader": "^2.0.0"
   }
 }

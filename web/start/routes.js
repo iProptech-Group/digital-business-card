@@ -15,6 +15,4 @@
 
 const Route = use('Route')
 
-//Route.any('*', 'NuxtController.render')
-// Route.get('user', 'UserController.index')
-Route.get('/', () => 'Hello Adonis')
+Route.any('*', 'NuxtController.render')

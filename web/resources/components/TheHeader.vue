@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
     <div class="navbar-brand">
       <NuxtLink class="navbar-item" v-bind:to="logoData.url">
-        <img v-bind:src="logoData.imageUrl" width="112" height="28">
+        <img src="../assets/img/logo.png" width="28" height="28">
       </NuxtLink>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -14,7 +14,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <NuxtLink class="navbar-item" v-for="item in menuItems" v-bind:to="item.url">
+        <NuxtLink class="navbar-item" v-for="(item, id) in menuItems" :key="id" v-bind:to="item.url">
           {{item.name}}
         </NuxtLink>
       </div>
@@ -46,12 +46,14 @@
             {name: 'Contact Us', url: '/'},
           ],
           logoData:
-            {url: '/', name: 'Digital Business Card', imageUrl: '/'}
+            {url: '/', name: 'Digital Business Card'}
         };
       }
     }
 </script>
 
 <style scoped>
-
+  #nav {
+    margin-bottom: 50px;
+  }
 </style>

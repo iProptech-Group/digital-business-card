@@ -1,8 +1,14 @@
 'use strict'
 
 class UserController {
-  index ({ request, response }) {
-      return view.render('hello-world')
+  async show() {
+    try {
+      const users = await Database.table('users')
+      return users
+    }
+    catch(err) {
+      return err
+    }
   }
 }
 

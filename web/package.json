@@ -1,5 +1,5 @@
 {
-  "name": "adonuxt",
+  "name": "Digital Business Card",
   "version": "1.0.0",
   "author": "",
   "description": "",
@@ -8,7 +8,7 @@
   "main": "server.js",
   "scripts": {
     "serve:dev": "npm run dev",
-    "dev": "webpack --watch --config ./config/webpack.js nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build-css": "webpack --watch --config ./config/webpack.js",
     "build": "node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js",

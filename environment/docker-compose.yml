@@ -23,3 +23,11 @@ services:
     ports:
     - 80:80
     - 443:443
+
+  mysql:
+    image: web-mysql:latest
+    build:
+      context: ./mysql
+    container_name: web-mysql
+    ports:
+    - 3306:3306

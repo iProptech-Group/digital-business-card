@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Adonuxt',
+    title: 'Digital Business Card',
     meta: [
       {
         charset: 'utf-8'
@@ -17,9 +17,9 @@ module.exports = {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: 'Adonuxt project'
+        hid: 'Digital Business Card',
+        name: 'Digital Business Card',
+        content: 'Digital Business Card'
       }
     ],
     link: [
@@ -28,12 +28,13 @@ module.exports = {
         type: 'image/x-icon',
         href: 'favicon.ico'
       }
-    ]
+    ],
+    script: [
+      {
+        src: '/js/app.js',
+      },
+    ],
   },
-  /*
-  ** Global CSS
-  */
-  css: ['~assets/css/main.css'],
   /*
   ** Customize the progress-bar color
   */

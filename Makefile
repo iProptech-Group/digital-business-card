@@ -9,3 +9,9 @@ down:
 
 npm-build:
 	docker exec -it web-node sh -c "npm install"
+
+css-build:
+	docker exec -it web-node sh -c "npm run build-css"
+
+lint:
+	docker exec -it web-node sh -c "npm run lint"

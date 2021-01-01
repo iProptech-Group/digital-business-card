@@ -1,5 +1,5 @@
 {
-  "name": "Digital Business Card",
+  "name": "adonuxt",
   "version": "1.0.0",
   "author": "",
   "description": "",
@@ -19,6 +19,7 @@
     "@adonisjs/ace": "^4.0.7",
     "@adonisjs/auth": "^2.0.10",
     "@adonisjs/bodyparser": "^1.0.8",
+    "@adonisjs/cli": "^4.0.12",
     "@adonisjs/cors": "^1.0.2",
     "@adonisjs/fold": "^4.0.5",
     "@adonisjs/framework": "^4.0.27",

@@ -15,5 +15,5 @@
 
 const Route = use('Route')
 
-Route.any('*', 'NuxtController.render')
 Route.get('api/users', 'UserController.show')
+Route.any('*', 'NuxtController.render')

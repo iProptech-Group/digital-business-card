@@ -1,9 +1,6 @@
-# Dockerfile
 FROM node:11.13.0-alpine
 
-# create destination directory
-RUN mkdir -p /digital-business-card/web
-
-# update and install dependency
-RUN apk update && apk upgrade \
+RUN mkdir -p /digital-business-card/web \
+    npm install -g @adonisjs/cli \
+    apk update && apk upgrade \
     apk add git

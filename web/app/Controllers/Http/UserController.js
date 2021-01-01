@@ -3,7 +3,7 @@
 class UserController {
   async show() {
     try {
-      const users = await Database.table('users')
+      const users = await Database.table('user')
       return users
     }
     catch(err) {

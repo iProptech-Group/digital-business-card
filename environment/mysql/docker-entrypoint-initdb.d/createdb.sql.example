@@ -25,4 +25,8 @@
 #CREATE DATABASE IF NOT EXISTS `dev_db_3` COLLATE 'utf8_general_ci' ;
 #GRANT ALL ON `dev_db_3`.* TO 'default'@'%' ;
 
+#CREATE USER 'testing'@'localhost' IDENTIFIED BY 'testing';
+CREATE DATABASE IF NOT EXISTS `testing` ;
+GRANT ALL ON `testing`.* TO 'root'@'%' ;
+
 FLUSH PRIVILEGES ;

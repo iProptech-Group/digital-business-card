@@ -1,7 +1,7 @@
 up:
 	docker-compose -f ./environment/docker-compose.yml up --remove-orphans -d
 
-build:
+build: copy-files
 	docker-compose -f ./environment/docker-compose.yml build
 
 down:
@@ -15,3 +15,9 @@ css-build:
 
 lint:
 	docker exec -it web-node sh -c "npm run lint"
+
+create-db:
+	docker exec -it web-mysql sh -c "mysql -u root -p < /docker-entrypoint-initdb.d/createdb.sql"
+
+copy-files:
+	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql

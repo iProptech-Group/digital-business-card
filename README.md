@@ -14,4 +14,5 @@ Link website on local: http://digital.local/
 -  make lint: fix code syntax
 -  make build-css: build asset with webpack
 -  make npm-build: install dependencies for nodeJS
+-  make create-db: create db on mysql container
 -  docker logs web-node -f: see node process

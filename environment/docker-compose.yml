@@ -9,7 +9,6 @@ services:
     working_dir: /digital-business-card/web
     volumes:
     - ../web:/digital-business-card/web
-    command: npm run dev
     tty: true
 
   nginx:
@@ -29,5 +28,9 @@ services:
     build:
       context: ./mysql
     container_name: web-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+    - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
     - 3306:3306

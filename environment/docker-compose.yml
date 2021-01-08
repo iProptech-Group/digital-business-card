@@ -1,5 +1,11 @@
 version: '3'
 
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+
 services:
   workspace:
     image: web-node:latest
@@ -10,6 +16,9 @@ services:
     volumes:
     - ../web:/digital-business-card/web
     tty: true
+    networks:
+      - frontend
+      - backend
 
   nginx:
     image: web-nginx-adonis:latest
@@ -22,6 +31,9 @@ services:
     ports:
     - 80:80
     - 443:443
+    networks:
+      - frontend
+      - backend
 
   mysql:
     image: web-mysql:latest
@@ -30,11 +42,13 @@ services:
     container_name: web-mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      - MYSQL_ROOT_PASSWORD=root
     volumes:
     - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
     - 3306:3306
+    networks:
+      - backend
 
   phpmyadmin:
     image: web-mysql-admin:lastest
@@ -42,7 +56,13 @@ services:
       context: ./phpmyadmin
     container_name: web-mysql-admin
     restart: always
+    depends_on:
+      - mysql
     ports:
     - 8080:80
     environment:
-      PMA_ARBITRARY=1
+      - PMA_ARBITRARY=1
+      - PMA_ABSOLUTE_URI="admin.digital.local"
+    networks:
+      - frontend
+      - backend

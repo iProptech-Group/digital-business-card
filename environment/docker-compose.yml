@@ -12,6 +12,8 @@ services:
     build:
       context: ./workspace
     container_name: web-node
+    environment:
+      - GRADLE_VERSION=2.11
     working_dir: /digital-business-card/web
     volumes:
     - ../web:/digital-business-card/web

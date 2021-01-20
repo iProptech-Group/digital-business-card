@@ -42,7 +42,7 @@ services:
     container_name: web-mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD="secret"
+      - MYSQL_ROOT_PASSWORD=secret
     volumes:
     - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     networks:
@@ -57,8 +57,8 @@ services:
     depends_on:
       - mysql
     environment:
-      - PMA_HOST="web-mysql-admin"
-      - PMA_ABSOLUTE_URI="http://phpmyadmin.digital.local/"
+      - PMA_HOST=web-mysql
+      - PMA_ABSOLUTE_URI=http://phpmyadmin.digital.local/
     networks:
       - frontend
       - backend

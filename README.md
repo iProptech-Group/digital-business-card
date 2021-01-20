@@ -1,10 +1,19 @@
 # digital-business-card
 A simple platform to generate digital business (v-cards)
+- Link website on local: http://digital.local
+- Link phpmyadmin on local: http://phpmyadmin.digital.local
 
 ## Guidelines
 
-Using this command to modify hosts file for macbook `vim /private/etc/hosts`
-Link website on local: http://digital.local/
+Using this command to modify hosts file for macbook `sudo vim /private/etc/hosts` and add-on
+```
+127.0.0.1 digital.local
+127.0.0.1 phpmyadmin.digital.local
+```
+
+Account to login `phpmyadmin`
+- User: root
+- Pass: secret
 
 ### Commands
 

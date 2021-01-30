@@ -42,6 +42,7 @@
         return {
           menuItems: [
             {name: 'Home Page', url: '/'},
+            {name: 'Create Profile', url: '/create-profile'},
             {name: 'About Us', url: '/'},
             {name: 'Contact Us', url: '/'},
           ],

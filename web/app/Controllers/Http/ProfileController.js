@@ -2,11 +2,10 @@
 
 const Database = use('Database')
 
-class UserController {
-  async show() {
+class ProfileController {
+  async create() {
     try {
-      const users = await Database.connection('mysql').select('*').from('users')
-      return users
+      return []
     }
     catch(err) {
       return err

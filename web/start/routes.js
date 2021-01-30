@@ -16,4 +16,5 @@
 const Route = use('Route')
 
 Route.get('api/users', 'UserController.show')
+Route.post('profile/create', 'ProfileController.create')
 Route.any('*', 'NuxtController.render')

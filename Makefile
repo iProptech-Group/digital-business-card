@@ -20,4 +20,5 @@ create-db:
 	docker exec -it web-mysql sh -c "mysql -u root -p < /docker-entrypoint-initdb.d/createdb.sql"
 
 copy-files:
+	cp ./config/.env.local ./web/.env
 	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql

@@ -26,7 +26,8 @@
 #GRANT ALL ON `dev_db_3`.* TO 'default'@'%' ;
 
 #CREATE USER 'testing'@'localhost' IDENTIFIED BY 'testing';
-CREATE DATABASE IF NOT EXISTS `testing` ;
-GRANT ALL ON `testing`.* TO 'root'@'%' ;
+CREATE DATABASE IF NOT EXISTS `digital` ;
+GRANT ALL ON `digital`.* TO 'root'@'%' ;
+ALTER USER root IDENTIFIED WITH mysql_native_password BY 'secret';
 
 FLUSH PRIVILEGES ;

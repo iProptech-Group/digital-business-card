@@ -3,14 +3,14 @@
 const Database = use('Database')
 
 class ProfileController {
-  async create() {
+  async create ({ request }) {
     try {
-      return []
-    }
-    catch(err) {
+      const usersData = request.collect('full-name', 'email', 'phone', 'facebook', 'instagram')
+      return usersData
+    } catch (err) {
       return err
     }
   }
 }
 
-module.exports = UserController
+module.exports = ProfileController

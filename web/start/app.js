@@ -1,5 +1,7 @@
 'use strict'
 
+const path = require('path');
+
 /*
 |--------------------------------------------------------------------------
 | Providers
@@ -19,7 +21,7 @@ const providers = [
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
-  getActualPath('AppServiceProvider')
+  getProviderPath('AppServiceProvider')
 ]
 
 /*
@@ -63,12 +65,11 @@ const commands = [
 
 /**
  *
- * @param givenProviderName
+ * @param name
  * @returns { string }
  */
-function getActualPath (givenProviderName) {
-  const providerNameFolder = 'givenProviderName'
-  return path.join(__dirname, '..', providerNameFolder, givenProviderName)
+function getProviderPath (name) {
+  return path.join(__dirname, '..', 'app/Providers', name)
 }
 
 module.exports = { providers, aceProviders, aliases, commands }

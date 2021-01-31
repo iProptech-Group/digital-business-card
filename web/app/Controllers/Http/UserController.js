@@ -1,13 +1,11 @@
 'use strict'
 
-const Database = use('Database')
-const UserRepository = use('UserRepository')
+const { UserRepository } = use('User/Repository')
 
 class UserController {
-  async show ({ UserRepository }) {
+  async show (UserRepository) {
     try {
-      // const users = await Database.connection('mysql').select('*').from('users')
-      return UserRepository
+      return console.log(UserRepository.get())
     } catch (err) {
       return err
     }

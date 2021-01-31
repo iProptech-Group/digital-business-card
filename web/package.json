@@ -41,7 +41,9 @@
     ]
   },
   "autoload": {
-    "App": "./app"
+    "App": "./app",
+    "Digital": "./src",
+    "Tests": "./tests"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

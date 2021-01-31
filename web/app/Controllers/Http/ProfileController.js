@@ -1,13 +1,12 @@
 'use strict'
 
 const Database = use('Database')
-const UserRepository = use('UserRepository')
 
 class ProfileController {
-  async create ({ request, UserRepository }) {
+  async create ({ request }) {
     try {
       // const usersData = request.collect('full-name', 'email', 'phone', 'facebook', 'instagram')
-      return UserRepository
+      return []
     } catch (err) {
       return err
     }

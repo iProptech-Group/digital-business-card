@@ -1,4 +1,4 @@
-up:
+up:	copy-files
 	docker-compose -f ./environment/docker-compose.yml up --remove-orphans -d
 
 build: copy-files

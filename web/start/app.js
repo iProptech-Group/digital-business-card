@@ -18,7 +18,8 @@ const providers = [
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
-  '@adonisjs/auth/providers/AuthProvider'
+  '@adonisjs/auth/providers/AuthProvider',
+  getActualPath('AppServiceProvider')
 ]
 
 /*
@@ -59,5 +60,15 @@ const aliases = {}
 const commands = [
   'App/Commands/NuxtBuild'
 ]
+
+/**
+ *
+ * @param givenProviderName
+ * @returns { string }
+ */
+function getActualPath (givenProviderName) {
+  const providerNameFolder = 'givenProviderName'
+  return path.join(__dirname, '..', providerNameFolder, givenProviderName)
+}
 
 module.exports = { providers, aceProviders, aliases, commands }

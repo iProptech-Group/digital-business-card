@@ -1,11 +1,12 @@
 'use strict'
 
-const { UserRepository } = use('User/Repository')
+const UserRepository = use('User/Repository')
 
 class UserController {
-  async show (UserRepository) {
+  async index (UserRepository) {
     try {
-      return console.log(UserRepository.get())
+      UserRepository.set('hung')
+      return console.log(UserRepository.getNewItem())
     } catch (err) {
       return err
     }

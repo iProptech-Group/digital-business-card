@@ -19,6 +19,22 @@ class Repository {
     return this.database.connection('mysql').select('*').from('users')
   }
 
+  getNewItem () {
+    return this.parades
+  }
+
+  getNewItemSecond () {
+    return this.params
+  }
+
+  /**
+   *
+   * @param parades
+   */
+  set (parades) {
+    this.parades = parades
+  }
+
   storeUserData () {
 
   }

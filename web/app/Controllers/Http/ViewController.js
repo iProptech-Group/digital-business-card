@@ -1,8 +1,8 @@
 'use strict'
 
-const NuxtService = use('App/Services/Nuxt')
+const NuxtService = require('../../../src/View/Nuxt')
 
-class NuxtController {
+class ViewController {
   async render ({ request, response, session }) {
     /**
      * Do not end the response when this method has been executed.
@@ -27,4 +27,4 @@ class NuxtController {
   }
 }
 
-module.exports = NuxtController
+module.exports = ViewController

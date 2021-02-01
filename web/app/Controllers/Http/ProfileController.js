@@ -3,7 +3,24 @@
 const Database = use('Database')
 
 class ProfileController {
-  async create ({ request }) {
+
+  /**
+   *
+   * @returns {Promise<*[]|*>}
+   */
+  async index () {
+    try {
+      return []
+    } catch (e) {
+      return e
+    }
+  }
+
+  /**
+   *
+   * @returns {Promise<*[]|*>}
+   */
+  async store () {
     try {
       // const usersData = request.collect('full-name', 'email', 'phone', 'facebook', 'instagram')
       return []

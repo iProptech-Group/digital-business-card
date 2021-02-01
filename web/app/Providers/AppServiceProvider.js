@@ -8,14 +8,15 @@ class AppServiceProvider extends ServiceProvider {
   register () {
 
     this.app.singleton('User/Repository', () => {
-      const params = 'hungdeptrai'
-      return new UserRepository(params, this.app.use('Database'))
+      return new UserRepository('hungdeptrai', this.app.use('Database'))
     })
 
   }
 
   boot () {
-
+    // const UserRepository = use('User/Repository')
+    // UserRepository.set('hung')
+    // return console.log(UserRepository.getNewItemSecond())
   }
 }
 

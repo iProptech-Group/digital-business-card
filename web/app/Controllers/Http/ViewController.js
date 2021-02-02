@@ -1,6 +1,6 @@
 'use strict'
 
-const NuxtService = require('../../../src/View/Nuxt')
+const NuxtService = use('Digital/View/Nuxt')
 
 class ViewController {
   async render ({ request, response, session }) {

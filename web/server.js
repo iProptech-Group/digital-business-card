@@ -18,13 +18,12 @@
 */
 
 const { Ignitor } = require('@adonisjs/ignitor')
-const NuxtService = use('Digital/View/Nuxt')
 
 new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
   .fireHttpServer()
   .then(() => {
-    return NuxtService.build()
+    return use('Digital/View/Nuxt').build()
   })
   .then(() => {
     use('Logger').info('Nuxt is ready to handle requests')

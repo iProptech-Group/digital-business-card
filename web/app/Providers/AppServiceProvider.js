@@ -7,16 +7,13 @@ class AppServiceProvider extends ServiceProvider {
 
   register () {
 
-    this.app.singleton('User/Repository', () => {
-      return new UserRepository('hungdeptrai', this.app.use('Database'))
+    this.app.singleton('User/Repository', (app) => {
+      return new UserRepository(app.use('Database').connection('mysql'))
     })
 
   }
 
   boot () {
-    // const UserRepository = use('User/Repository')
-    // UserRepository.set('hung')
-    // return console.log(UserRepository.getNewItemSecond())
   }
 }
 

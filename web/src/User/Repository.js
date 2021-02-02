@@ -1,46 +1,52 @@
 'use strict'
 
+/**
+ * @class Repository
+ */
 class Repository {
-  /**
-   *
-   * @param params
-   * @param database
-   */
-  constructor (params, database) {
-    this.params = params
-    this.database = database
-  }
 
   /**
    *
-   * @returns { string }
+   * @param connection
    */
-  get () {
-    return this.database.connection('mysql').select('*').from('users')
-  }
-
-  getNewItem () {
-    return this.parades
-  }
-
-  getNewItemSecond () {
-    return this.params
+  constructor (connection) {
+    this.connection = connection
+    this.tableName = 'users'
   }
 
   /**
    *
-   * @param parades
+   * @param data
+   * @return {void}
    */
-  set (parades) {
-    this.parades = parades
+  create (data) {
+    return this.connection.table(this.tableName).insert(data)
   }
 
-  storeUserData () {
-
+  /**
+   *
+   * @return {array}
+   */
+  getAll () {
+    return this.connection.select('*').from(this.tableName)
   }
 
-  getUserData () {
+  /**
+   *
+   * @param userName
+   * @return {string}
+   */
+  update (userName) {
+    return userName
+  }
 
+  /**
+   *
+   * @param userName
+   * @return {string}
+   */
+  find (userName) {
+    return userName
   }
 }
 

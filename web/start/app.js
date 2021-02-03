@@ -1,5 +1,7 @@
 'use strict'
 
+const path = require('path');
+
 /*
 |--------------------------------------------------------------------------
 | Providers
@@ -18,7 +20,8 @@ const providers = [
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
-  '@adonisjs/auth/providers/AuthProvider'
+  '@adonisjs/auth/providers/AuthProvider',
+  getProviderPath('AppServiceProvider')
 ]
 
 /*
@@ -59,5 +62,14 @@ const aliases = {}
 const commands = [
   'App/Commands/NuxtBuild'
 ]
+
+/**
+ *
+ * @param name
+ * @returns { string }
+ */
+function getProviderPath (name) {
+  return path.join(__dirname, '..', 'app/Providers', name)
+}
 
 module.exports = { providers, aceProviders, aliases, commands }

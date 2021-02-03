@@ -6,13 +6,13 @@ const Schema = use('Schema')
 class UsersSchema extends Schema {
   up () {
     this.create('users', (table) => {
-      // table.increments()
+      table.increments()
       table.string('full-name', 80).notNullable().unique()
       table.string('email', 254).notNullable().unique()
       table.integer('phone', 254).notNullable().unique()
       table.string('facebook', 254).notNullable().unique()
       table.string('instagram', 254).notNullable().unique()
-      // table.timestamps()
+      table.timestamps()
     })
   }
 

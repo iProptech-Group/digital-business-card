@@ -1,7 +1,7 @@
 'use strict'
 
 const { Command } = use('@adonisjs/ace')
-const NuxtService = use('App/Services/Nuxt')
+const NuxtService = use('Digital/View/Nuxt')
 
 class NuxtBuild extends Command {
   /**

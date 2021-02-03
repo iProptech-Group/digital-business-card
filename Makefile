@@ -1,4 +1,4 @@
-up:
+up:	copy-files
 	docker-compose -f ./environment/docker-compose.yml up --remove-orphans -d
 
 build: copy-files
@@ -22,3 +22,6 @@ create-db:
 copy-files:
 	cp ./config/.env.local ./web/.env
 	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql
+
+migration:
+	docker exec -it web-node sh -c "adonis migration:run"

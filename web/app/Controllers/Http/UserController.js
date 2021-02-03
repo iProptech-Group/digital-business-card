@@ -1,15 +1,35 @@
 'use strict'
 
-const Database = use('Database')
+const UserRepository = use('User/Repository')
 
 class UserController {
-  async show(request) {
+
+  /**
+   *
+   * @param response
+   * @return {Promise<any>}
+   */
+  async index ({ response }) {
     try {
-      // const users = await Database.connection('mysql').select('*').from('users')
-      return request.csrfToken()
+      return await UserRepository.getAll()
+    } catch (e) {
+      return response.status(400).send(e)
     }
-    catch(err) {
-      return err
+  }
+
+  /**
+   *
+   * @param request
+   * @param response
+   * @return {Promise<*>}
+   */
+  async store ({ request, response }) {
+    try {
+      const data = request.only(['full-name', 'email', 'phone', 'facebook', 'instagram'])
+      await UserRepository.create(data)
+      return response.status(201).send('Submit Successfully')
+    } catch (e) {
+      return response.status(400).send(e)
     }
   }
 }

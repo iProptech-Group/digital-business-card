@@ -1,5 +1,5 @@
 <template>
-  <form action="/profile/create" method="post">
+  <form action="/api/v1/users" method="post">
     <div class="field" v-for="(item, id) in inputItems" :key="id">
       <label class="label" v-bind:for="item.inputName">{{item.label}}</label>
       <div class="control">

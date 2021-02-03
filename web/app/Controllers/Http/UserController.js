@@ -3,28 +3,35 @@
 const UserRepository = use('User/Repository')
 
 class UserController {
-  async index () {
+
+  /**
+   *
+   * @param response
+   * @return {Promise<any>}
+   */
+  async index ({ response }) {
     try {
-      const data = {
-        'full-name': 'hung',
-        email: 'phamphihungbk@gmail.com',
-        phone: 1285532132,
-        facebook: 'https://facebook',
-        instagram: 'https://instagram'
-      }
-      UserRepository.create(data)
-      return UserRepository.getAll()
+      return await UserRepository.getAll()
     } catch (e) {
-      return e
+      return response.status(400).send(e)
     }
   }
 
-  async store () {
-    try {} catch (e) {
-      return e
+  /**
+   *
+   * @param request
+   * @param response
+   * @return {Promise<*>}
+   */
+  async store ({ request, response }) {
+    try {
+      const data = request.only(['full-name', 'email', 'phone', 'facebook', 'instagram'])
+      await UserRepository.create(data)
+      return response.status(201).send('Submit Successfully')
+    } catch (e) {
+      return response.status(400).send(e)
     }
   }
-
 }
 
 module.exports = UserController

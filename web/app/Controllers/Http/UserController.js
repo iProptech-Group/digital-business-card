@@ -3,6 +3,18 @@
 const UserRepository = use('User/Repository')
 
 class UserController {
+  /**
+   *
+   * @param response
+   * @return {Promise<any>}
+   */
+  async index ({ response }) {
+    try {
+      return await UserRepository.getAll()
+    } catch (e) {
+      return response.status(400).send(e)
+    }
+  }
 
   /**
    *

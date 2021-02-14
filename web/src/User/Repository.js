@@ -1,26 +1,26 @@
 'use strict'
 
+const Model = use('Digital/User/Model')
+
 /**
  * @class Repository
  */
 class Repository {
-
   /**
    *
-   * @param connection
+   * @param Database
    */
-  constructor (connection) {
-    this.connection = connection
-    this.tableName = 'users'
+  constructor (Database) {
+    this.model = new Model(Database)
   }
 
   /**
    *
    * @param data
-   * @return {void}
+   * @returns {*}
    */
   create (data) {
-    return this.connection.table(this.tableName).insert(data)
+    return this.model.insert(data)
   }
 
   /**
@@ -28,25 +28,24 @@ class Repository {
    * @return {array}
    */
   getAll () {
-    return this.connection.select('*').from(this.tableName)
+    return this.model.all()
   }
 
   /**
    *
-   * @param userName
-   * @return {string}
+   * @param email
    */
-  update (userName) {
-    return userName
+  findUser (email) {
+    return this.model.find(this._prepareCondition(email))
   }
 
   /**
    *
-   * @param userName
-   * @return {string}
+   * @param condition
+   * @private
    */
-  find (userName) {
-    return userName
+  _prepareCondition (condition) {
+    return condition
   }
 }
 

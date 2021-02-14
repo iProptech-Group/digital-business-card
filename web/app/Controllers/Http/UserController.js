@@ -21,7 +21,7 @@ class UserController {
    * @param response
    * @return {Promise<any>}
    */
-  async index ({ response }) {
+  async find ({ response }) {
     try {
       return await UserRepository.getAll()
     } catch (e) {
@@ -35,7 +35,7 @@ class UserController {
    * @param response
    * @return {Promise<*>}
    */
-  async store ({ request, response }) {
+  async create ({ request, response }) {
     try {
       const data = request.only(['full-name', 'email', 'phone', 'facebook', 'instagram'])
       await UserRepository.create(data)

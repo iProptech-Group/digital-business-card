@@ -43,8 +43,8 @@
           menuItems: [
             {name: 'Home Page', url: '/'},
             {name: 'Create Profile', url: '/create-profile'},
-            {name: 'About Us', url: '/'},
-            {name: 'Contact Us', url: '/'},
+            {name: 'All Users', url: '/all-users'},
+            {name: 'Find Your Info', url: '/find-your-info'},
           ],
           logoData:
             {url: '/', name: 'Digital Business Card'}

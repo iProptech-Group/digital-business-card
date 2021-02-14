@@ -3,7 +3,6 @@
 const UserRepository = use('User/Repository')
 
 class UserController {
-
   /**
    *
    * @param response
@@ -19,11 +18,24 @@ class UserController {
 
   /**
    *
+   * @param response
+   * @return {Promise<any>}
+   */
+  async find ({ response }) {
+    try {
+      return await UserRepository.getAll()
+    } catch (e) {
+      return response.status(400).send(e)
+    }
+  }
+
+  /**
+   *
    * @param request
    * @param response
    * @return {Promise<*>}
    */
-  async store ({ request, response }) {
+  async create ({ request, response }) {
     try {
       const data = request.only(['full-name', 'email', 'phone', 'facebook', 'instagram'])
       await UserRepository.create(data)

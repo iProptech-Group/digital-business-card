@@ -16,5 +16,6 @@
 const Route = use('Route')
 
 Route.get('/api/v1/users/', 'UserController.index')
-Route.post('/api/v1/users/', 'UserController.store')
+Route.get('/api/v1/users/{userId}', 'UserController.index')
+Route.post('/api/v1/users/', 'UserController.create')
 Route.any('*', 'ViewController.render')
